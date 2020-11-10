@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="servis-catr-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+  
 
     <p>
         <?= Html::a('Create Servis Catr', ['create'], ['class' => 'btn btn-success']) ?>

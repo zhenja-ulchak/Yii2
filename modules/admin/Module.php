@@ -10,7 +10,7 @@ class Module extends \yii\base\Module
     /**
      * {@inheritdoc}
      */
-    public $layout ='/main1';
+    public $layout ='/main';
     public $controllerNamespace = 'app\modules\admin\controllers';
 
     /**

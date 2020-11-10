@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pod-serviscatr-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+  
 
     <p>
         <?= Html::a('Create Pod Serviscatr', ['create'], ['class' => 'btn btn-success']) ?>
