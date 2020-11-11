@@ -32,7 +32,28 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
+        
+        'headerRowOptions' => [
+            'class' => 'headerCustomRow'
+        ],
+        'footerRowOptions' => [
+            'style' => 'color: #888;font-style: italic;'
+        ],
+        'rowOptions' =>[ 'style'=>'color:black'],
+        
     ]); ?>
 
 
 </div>
+<style>
+    .empty-cell{
+        background: #c12e2a;
+    }
+    .headerCustomRow, .headerCustomRow th, .headerCustomRow a{
+        background: #337ab7;
+        color: black;
+    }
+    .stripShow{
+        background: #e9f1ff
+    }
+</style>
