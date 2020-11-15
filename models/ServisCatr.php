@@ -43,4 +43,8 @@ class ServisCatr extends \yii\db\ActiveRecord
             'category_id' => 'Category ID',
         ];
     }
+    public function getPserwiscart()
+    {
+        return $this->hasOne(PodServiscatr::className(), ['id' => 'category_id']);
+    }
 }

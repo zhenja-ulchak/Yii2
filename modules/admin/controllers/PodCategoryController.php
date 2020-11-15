@@ -3,14 +3,14 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\models\PodCategory;
-use app\models\PodCategorySearch;
+use app\models\Podcategory;
+use app\models\PodcategorySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * PodcategoryController implements the CRUD actions for PodCategory model.
+ * PodcategoryController implements the CRUD actions for Podcategory model.
  */
 class PodcategoryController extends Controller
 {
@@ -30,12 +30,12 @@ class PodcategoryController extends Controller
     }
 
     /**
-     * Lists all PodCategory models.
+     * Lists all Podcategory models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new PodCategorySearch();
+        $searchModel = new PodcategorySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class PodcategoryController extends Controller
     }
 
     /**
-     * Displays a single PodCategory model.
+     * Displays a single Podcategory model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class PodcategoryController extends Controller
     }
 
     /**
-     * Creates a new PodCategory model.
+     * Creates a new Podcategory model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new PodCategory();
+        $model = new Podcategory();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class PodcategoryController extends Controller
     }
 
     /**
-     * Updates an existing PodCategory model.
+     * Updates an existing Podcategory model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class PodcategoryController extends Controller
     }
 
     /**
-     * Deletes an existing PodCategory model.
+     * Deletes an existing Podcategory model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class PodcategoryController extends Controller
     }
 
     /**
-     * Finds the PodCategory model based on its primary key value.
+     * Finds the Podcategory model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return PodCategory the loaded model
+     * @return Podcategory the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = PodCategory::findOne($id)) !== null) {
+        if (($model = Podcategory::findOne($id)) !== null) {
             return $model;
         }
 

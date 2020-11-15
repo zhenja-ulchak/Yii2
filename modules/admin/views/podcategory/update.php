@@ -3,14 +3,14 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\PodCategory */
+/* @var $model app\models\Podcategory */
 
-$this->title = 'Update Pod Category: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Pod Categories', 'url' => ['index']];
+$this->title = 'Update Podcategory: ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Podcategories', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="pod-category-update">
+<div class="podcategory-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

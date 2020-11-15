@@ -7,12 +7,12 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\CategorySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Категории';
+$this->title = 'Categories';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="category-index">
 
-   
+    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Create Category', ['create'], ['class' => 'btn btn-success']) ?>
@@ -28,32 +28,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'title',
-            'category_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
-        
-        'headerRowOptions' => [
-            'class' => 'headerCustomRow'
-        ],
-        'footerRowOptions' => [
-            'style' => 'color: #888;font-style: italic;'
-        ],
-        'rowOptions' =>[ 'style'=>'color:black'],
-        
     ]); ?>
 
 
 </div>
-<style>
-    .empty-cell{
-        background: #c12e2a;
-    }
-    .headerCustomRow, .headerCustomRow th, .headerCustomRow a{
-        background: #337ab7;
-        color: black;
-    }
-    .stripShow{
-        background: #e9f1ff
-    }
-</style>

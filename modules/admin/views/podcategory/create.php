@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\PodCategory */
+/* @var $model app\models\Podcategory */
 
-$this->title = 'Create Pod Category';
-$this->params['breadcrumbs'][] = ['label' => 'Pod Categories', 'url' => ['index']];
+$this->title = 'Create Podcategory';
+$this->params['breadcrumbs'][] = ['label' => 'Podcategories', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="pod-category-create">
+<div class="podcategory-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

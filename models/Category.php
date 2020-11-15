@@ -9,7 +9,6 @@ use Yii;
  *
  * @property int $id
  * @property string|null $title
- * @property int $category_id
  */
 class Category extends \yii\db\ActiveRecord
 {
@@ -27,8 +26,6 @@ class Category extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['category_id'], 'required'],
-            [['category_id'], 'integer'],
             [['title'], 'string', 'max' => 255],
         ];
     }
@@ -41,7 +38,10 @@ class Category extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'title' => 'Title',
-            'category_id' => 'Category ID',
         ];
+    }
+    public function getPcategory()
+    {
+        return $this->hasMany(PodCategory::className(), ['category_id' => 'id']);
     }
 }

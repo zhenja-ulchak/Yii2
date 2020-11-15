@@ -20,11 +20,11 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
-       ' css/styles-merged.css',
-       ' css/style.min.css',
+        'css/style.min.css',
         'css/custom.css',
-        //'css/style.css',
+        'css/style.css',
+        'css/bootstrap.min.css',
+        'css/styles-merged.css',     
         'css/animate.css',
         'css/photoswipe.css',
         'css/bootstrap.min.css',
@@ -33,8 +33,8 @@ class AppAsset extends AssetBundle
         'css/magnific-popup.css',
         'css/owl.carousel.css',
         'css/owl.theme.default.min.css',
-        'css/style.min.css',
         'css/icomoon.css',
+        'admin-lte/dist/css/AdminLTE.css',
 
     
     ];
@@ -47,10 +47,13 @@ class AppAsset extends AssetBundle
         'js/main.js',
         'js/scripts.js',
         'js/scripts.min.js',
+        'admin-lte/dist/js/AdminLTE/app.js',
 
     ];
     public $depends = [
+        
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
     ];
 }

@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\PodCategory */
+/* @var $model app\models\Podcategory */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Pod Categories', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Podcategories', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="pod-category-view">
+<div class="podcategory-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'text',
             'imege',
+            'category_id',
         ],
     ]) ?>
 

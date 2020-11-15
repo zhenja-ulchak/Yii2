@@ -9,6 +9,10 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Category;
+use app\models\PodCategory;
+use app\models\PodServiscatr;
+use app\models\ServisCatr;
 
 class SiteController extends Controller
 {
@@ -61,7 +65,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+       
+        $rests = PodCategory::find()->all();
+        $trusts = ServisCatr::find()->all();
+        return $this->render('index', [
+            'trusts' => $trusts,
+            'rests'=>$rests,
+        ]);
     }
 
     /**
@@ -103,17 +113,10 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
-    public function actionContact()
+    public function actionSetres()
     {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
+   
+        return $this->render('setres');
     }
 
     /**

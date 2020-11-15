@@ -11,8 +11,9 @@ use Yii;
  * @property string|null $name
  * @property string|null $text
  * @property string|null $imege
+ * @property int|null $category_id
  */
-class PodCategory extends \yii\db\ActiveRecord
+class Podcategory extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -28,6 +29,7 @@ class PodCategory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['category_id'], 'integer'],
             [['name', 'text', 'imege'], 'string', 'max' => 255],
         ];
     }
@@ -42,6 +44,11 @@ class PodCategory extends \yii\db\ActiveRecord
             'name' => 'Name',
             'text' => 'Text',
             'imege' => 'Imege',
+            'category_id' => 'Category ID',
         ];
     }
+       public function getCategory()
+     {
+         return $this->hasOne(Category::className(), ['id' => 'category_id']);
+     }
 }

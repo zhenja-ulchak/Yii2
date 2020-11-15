@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\PodCategory;
+use app\models\Podcategory;
 
 /**
- * PodCategorySearch represents the model behind the search form of `app\models\PodCategory`.
+ * PodcategorySearch represents the model behind the search form of `app\models\Podcategory`.
  */
-class PodCategorySearch extends PodCategory
+class PodcategorySearch extends Podcategory
 {
     /**
      * {@inheritdoc}
@@ -17,7 +17,7 @@ class PodCategorySearch extends PodCategory
     public function rules()
     {
         return [
-            [['id'], 'integer'],
+            [['id', 'category_id'], 'integer'],
             [['name', 'text', 'imege'], 'safe'],
         ];
     }
@@ -40,7 +40,7 @@ class PodCategorySearch extends PodCategory
      */
     public function search($params)
     {
-        $query = PodCategory::find();
+        $query = Podcategory::find();
 
         // add conditions that should always apply here
 
@@ -59,6 +59,7 @@ class PodCategorySearch extends PodCategory
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'category_id' => $this->category_id,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])

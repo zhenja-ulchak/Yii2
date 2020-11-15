@@ -42,4 +42,8 @@ class PodServiscatr extends \yii\db\ActiveRecord
             'imege' => 'Imege',
         ];
     }
+    public function getServiscard()
+    {
+        return $this->hasMany(ServisCatr::className(), ['category_id' => 'id']);
+    }
 }

@@ -25,7 +25,8 @@
             </div>
         </form>
         <!-- /.search form -->
-
+        
+        
         <?= dmstr\widgets\Menu::widget(
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
@@ -33,11 +34,11 @@
                     ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
+                    ['label' => 'PodCategory', 'url' => ['/admin/podcategory/index']],
                     ['label' => 'Category', 'url' => ['/admin/category/index']],
                     ['label' => 'Golovna', 'url' => ['/admin/golovna/index']],
                     ['label' => 'Podserviscatr', 'url' => ['/admin/podserviscatr/index']],
                     ['label' => 'ServisCatr', 'url' => ['/admin/serviscatr/index']],
-                    ['label' => 'PodCatg', 'url' => ['/admin/podcategory/index']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
                         'label' => 'Some tools',

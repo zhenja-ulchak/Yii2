@@ -4,18 +4,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\PodCategorySearch */
+/* @var $searchModel app\models\PodcategorySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Pod Categories';
+$this->title = 'Podcategories';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="pod-category-index">
+<div class="podcategory-index">
 
-  
+    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Pod Category', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Podcategory', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'text',
             'imege',
+            'category_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
