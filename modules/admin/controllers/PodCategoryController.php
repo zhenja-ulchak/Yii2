@@ -134,10 +134,12 @@ class PodcategoryController extends Controller
         {
            
             $article = $this->findModel($id);
+            
             $file = UploadedFile::getInstance($model, 'imege');
 
             if($model->saveImage($model->uploadFile($file, $article->imege)))
             {
+                
                 return $this->redirect(['view', 'id'=>$article->id]);
             }
         }

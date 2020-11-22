@@ -29,9 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             'text',
+
             [
                 'format' => 'html',
-                'label' => 'Image',
+                'label' => 'Imege',
                 'value' => function($data){
                     return Html::img($data->getImage(), ['width'=>200]);
                 }
