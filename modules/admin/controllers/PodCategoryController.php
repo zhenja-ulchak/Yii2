@@ -2,12 +2,15 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\ImageUpload;
+use yii\web\UploadedFile;
 use Yii;
 use app\models\Podcategory;
 use app\models\PodcategorySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+
 
 /**
  * PodcategoryController implements the CRUD actions for Podcategory model.
@@ -123,5 +126,22 @@ class PodcategoryController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    public function actionUpload($id){
+        $model = new ImageUpload;
+
+        if (Yii::$app->request->isPost)
+        {
+           
+            $article = $this->findModel($id);
+            $file = UploadedFile::getInstance($model, 'imege');
+
+            if($model->saveImage($model->uploadFile($file, $article->imege)))
+            {
+                return $this->redirect(['view', 'id'=>$article->id]);
+            }
+        }
+        
+        return $this->render('upload', ['model'=>$model]);
     }
 }
