@@ -16,8 +16,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'text')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'imege')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'category_id')->textInput() ?>
 
     <div class="form-group">

@@ -32,6 +32,8 @@ class Podcategory extends \yii\db\ActiveRecord
         return [
             [['category_id'], 'integer'],
             [['name', 'text', 'imege'], 'string', 'max' => 255],
+            [['imege'], 'required'],
+            [['imege'], 'file', 'extensions' => 'jpg,png'],
         ];
     }
 
