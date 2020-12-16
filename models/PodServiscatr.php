@@ -46,4 +46,9 @@ class PodServiscatr extends \yii\db\ActiveRecord
     {
         return $this->hasMany(ServisCatr::className(), ['category_id' => 'id']);
     }
+    
+    public function getImage()
+    {
+        return  ($this->imege) ? '/web/uploadsc/' . $this->imege : '/web/uploadsc/no-image.png';
+    }
 }

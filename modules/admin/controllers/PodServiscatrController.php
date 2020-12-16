@@ -3,6 +3,8 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
+use app\models\ImgUploadSc;
+use yii\web\UploadedFile;
 use app\models\PodServiscatr;
 use app\models\PodServiscatrSearch;
 use yii\web\Controller;
@@ -123,5 +125,24 @@ class PodserviscatrController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    public function actionUploadsc($id){
+        $model = new ImgUploadSc;
+
+        if (Yii::$app->request->isPost)
+        {
+           
+            $article = $this->findModel($id);
+            
+            $file = UploadedFile::getInstance($model, 'imege');
+
+            if($model->saveImage($model->uploadFile($file, $article->imege)))
+            {
+                
+                return $this->redirect(['view', 'id'=>$article->id]);
+            }
+        }
+        
+        return $this->render('uploadsc', ['model'=>$model]);
     }
 }
