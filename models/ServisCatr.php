@@ -47,4 +47,14 @@ class ServisCatr extends \yii\db\ActiveRecord
     {
         return $this->hasOne(PodServiscatr::className(), ['id' => 'category_id']);
     }
+
+// public function getImg($id)
+// {
+//     $mmod=PodServiscatr::find()->where('id='.$id)->one()->imege;
+//     if ($mmod!='') {$img='/web/uploadsc/' . $mmod;}else{
+//      $img='/web/uploadsc/no-image.png';
+//     }
+//     return $img;
+
+// }
 }

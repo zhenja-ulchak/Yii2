@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use app\models\PodServiscatr;
 ?>
 
 
@@ -64,7 +65,7 @@ use yii\helpers\Url;
                <div class="col-md-4">
                   <div class="service left-icon probootstrap-animate">
                        <div class="icon">
-                          <i class="icon-laptop3"></i>
+                          <img width='200px' src='<?= $rest->getImage();?>'> 
                         </div>
                         <div class="text">
                           <h3 class="heading"><?= $rest->name ?></h3>
@@ -172,12 +173,26 @@ use yii\helpers\Url;
           <h2>The Projects</h2>
         </div>
       </div>
+
+      
       <?php foreach ($trusts as $trust): ?>
+        <?php 
+          $ter = $trust->pserwiscart->imege;
+          
+         
+          if ($ter == ''){
+            $img = '/web/uploadsc/no-image.png';
+
+          }else {
+             $img = '/web/uploadsc/' . $ter;
+          };
+      
+          ?>
       <div class="row">
         <div class="col-md-4 probootstrap-animate">
           <div class="probootstrap-card">
             <div class="probootstrap-card-media">
-              <a href="single-page.html"><img src="img/slider_1.jpg" class="img-responsive img-border" alt="Free HTML5 Template by ProBootstrap.com"></a>
+              <a href="single-page.html"><img width='200px' src='<?php echo $img; ?> '></a>
             </div>
             <div class="probootstrap-card-text">
               <h2 class="probootstrap-card-heading mb0"><?= $trust->pserwiscart->text ?></h2>
@@ -188,6 +203,7 @@ use yii\helpers\Url;
           </div>
         </div>
         <?php endforeach; ?> 
+         
       </div>
     </div>
   </section>

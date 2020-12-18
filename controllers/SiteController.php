@@ -70,10 +70,12 @@ class SiteController extends Controller
         $rests = PodCategory::find()->all();
         $trusts = ServisCatr::find()->all();
         $golovnas = Golovna::find()->all();
+        
         return $this->render('index', [
             'trusts' => $trusts,
             'rests'=>$rests,
             'golovnas'=>$golovnas,
+            
         ]);
     }
 
